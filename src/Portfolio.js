@@ -160,7 +160,7 @@ function Portfolio() {
             </div>
           </div>
           <div className="hero-image">
-            <img src="/lemportrait.png" alt="Portrait" />
+            <img src="/lemportrait.jpg" alt="Portrait" />
             <div className="skill-tags">
               <span className="skill-tag">UI Designer</span>
               <span className="skill-tag">UX Expert</span>
