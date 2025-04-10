@@ -111,7 +111,7 @@ function Portfolio() {
           </button>
           {/* Nav */}
           <nav style={{ display: isMenuOpen ? "flex" : "" }}>
-            {["home", "about", "skills", "projects", "experience", "contact"].map((section) => (
+            {["home", "about", "skills", "projects", "Process" , "Certification" , "experience", "contact"].map((section) => (
               <a 
                 key={section}
                 href={`#${section}`} 

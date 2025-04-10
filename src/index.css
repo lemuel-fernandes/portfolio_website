@@ -6,7 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: #1D1616; /* Dark background */
   color: #EEEEEE;      /* Light text */
