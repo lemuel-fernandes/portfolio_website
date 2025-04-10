@@ -32,7 +32,7 @@ function Portfolio() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2, rootMargin: "-10% 0px -10% 0px" }
     );
 
     const sections = document.querySelectorAll("section[id]");
@@ -46,6 +46,28 @@ function Portfolio() {
       });
     };
   }, []);
+
+  // Handler for smooth scrolling and offset for fixed header
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    setIsMenuOpen(false);
+    
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Get header height for offset
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      
+      // Calculate position with offset
+      const sectionPosition = section.getBoundingClientRect().top;
+      const offsetPosition = sectionPosition + window.pageYOffset - headerHeight - 20; // Extra 20px padding
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   // Handler for input changes
   const handleChange = (e) => {
@@ -96,12 +118,38 @@ function Portfolio() {
     }
   };
 
+  // Navigation sections with consistent casing
+  const navigationSections = [
+    "home", 
+    "about", 
+    "skills", 
+    "projects", 
+    "process", 
+    "certificates", 
+    "experience", 
+    "contact"
+  ];
+
+  // Add scroll padding to the root element to prevent section titles from being hidden
+  useEffect(() => {
+    document.documentElement.style.scrollPaddingTop = "80px"; // Adjust based on header height
+    return () => {
+      document.documentElement.style.scrollPaddingTop = "0";
+    };
+  }, []);
+
   return (
     <div>
       {/* Header */}
-      <header>
+      <header style={{ 
+        position: "sticky", 
+        top: 0, 
+        zIndex: 100,
+        background: "#181818", // Match your theme's background or add a background
+        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)"
+      }}>
         <div className="container header-content">
-          <a href="#home" className="logo">
+          <a href="#home" className="logo" onClick={(e) => handleNavClick(e, "home")}>
             {portfolioData.personalInfo.name.split(" ")[0]}.design
           </a>
 
@@ -111,11 +159,11 @@ function Portfolio() {
           </button>
           {/* Nav */}
           <nav style={{ display: isMenuOpen ? "flex" : "" }}>
-            {["home", "about", "skills", "projects", "Process" , "Certification" , "experience", "contact"].map((section) => (
+            {navigationSections.map((section) => (
               <a 
                 key={section}
                 href={`#${section}`} 
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, section)}
                 style={{ color: activeSection === section ? "#D84040" : "" }}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -140,10 +188,10 @@ function Portfolio() {
             </h1>
             <p>I design intuitive interfaces and create meaningful experiences that connect people with technology, products, and ideas.</p>
             <div>
-              <a href="#projects" className="btn">
+              <a href="#projects" className="btn" onClick={(e) => handleNavClick(e, "projects")}>
                 View My Work {getIcon("ArrowRight")}
               </a>
-              <a href="#contact" className="btn">Get in Touch</a>
+              <a href="#contact" className="btn" onClick={(e) => handleNavClick(e, "contact")}>Get in Touch</a>
             </div>
             <div style={{ marginTop: "1rem" }}>
               {portfolioData.socialMedia.map((social) => (
@@ -356,7 +404,7 @@ function Portfolio() {
           <div className="process-cta">
             <h3>Ready to bring your vision to life?</h3>
             <p>I combine creativity with strategy to design meaningful experiences</p>
-            <a href="#contact" className="btn">Let's Talk</a>
+            <a href="#contact" className="btn" onClick={(e) => handleNavClick(e, "contact")}>Let's Talk</a>
           </div>
         </section>
 
@@ -508,8 +556,6 @@ function Portfolio() {
           </div>
         </section>
 
-      
-
         {/* Contact Section */}
         <section id="contact" className="contact container">
           <div className="section-title">
@@ -630,12 +676,17 @@ function Portfolio() {
     <div>
       <h2 className="font-bold mb-2">Navigation</h2>
       <ul className="space-y-1">
-        <li><a href="#home" className="hover:text-purple-400">Home</a></li>
-        <li><a href="#about" className="hover:text-purple-400">About</a></li>
-        <li><a href="#skills" className="hover:text-purple-400">Skills</a></li>
-        <li><a href="#projects" className="hover:text-purple-400">Projects</a></li>
-        <li><a href="#experience" className="hover:text-purple-400">Experience</a></li>
-        <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
+        {navigationSections.map((section) => (
+          <li key={section}>
+            <a 
+              href={`#${section}`} 
+              onClick={(e) => handleNavClick(e, section)}
+              className="hover:text-purple-400"
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
 
