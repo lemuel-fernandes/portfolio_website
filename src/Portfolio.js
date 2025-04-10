@@ -189,16 +189,12 @@ function Portfolio() {
             </div>
             <div className="about-stats">
               <div className="stat-item">
-                <h3>5+</h3>
+                <h3>2</h3>
                 <p>Years Experience</p>
               </div>
               <div className="stat-item">
-                <h3>50+</h3>
+                <h3>10+</h3>
                 <p>Projects Completed</p>
-              </div>
-              <div className="stat-item">
-                <h3>30+</h3>
-                <p>Happy Clients</p>
               </div>
             </div>
           </div>
@@ -210,26 +206,7 @@ function Portfolio() {
             <h2>My Skills</h2>
             <div className="underline"></div>
           </div>
-          <div className="skills-tabs">
-            <button 
-              className={activeFilter === "Design" ? "active" : ""} 
-              onClick={() => setActiveFilter("Design")}
-            >
-              Design
-            </button>
-            <button 
-              className={activeFilter === "Development" ? "active" : ""} 
-              onClick={() => setActiveFilter("Development")}
-            >
-              Development
-            </button>
-            <button 
-              className={activeFilter === "Tools" ? "active" : ""} 
-              onClick={() => setActiveFilter("Tools")}
-            >
-              Tools
-            </button>
-          </div>
+          
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
             {portfolioData.about.skills
               .filter(skill => activeFilter === "All" || skill.category === activeFilter)
@@ -264,38 +241,7 @@ function Portfolio() {
             <h2>Featured Projects</h2>
             <div className="underline"></div>
           </div>
-          <div className="project-filters">
-            <button 
-              className={activeFilter === "All" ? "active" : ""} 
-              onClick={() => setActiveFilter("All")}
-            >
-              All
-            </button>
-            <button 
-              className={activeFilter === "UI Design" ? "active" : ""} 
-              onClick={() => setActiveFilter("UI Design")}
-            >
-              UI Design
-            </button>
-            <button 
-              className={activeFilter === "UX Research" ? "active" : ""} 
-              onClick={() => setActiveFilter("UX Research")}
-            >
-              UX Research
-            </button>
-            <button 
-              className={activeFilter === "Web Development" ? "active" : ""} 
-              onClick={() => setActiveFilter("Web Development")}
-            >
-              Web Development
-            </button>
-            <button 
-              className={activeFilter === "Mobile Apps" ? "active" : ""} 
-              onClick={() => setActiveFilter("Mobile Apps")}
-            >
-              Mobile Apps
-            </button>
-          </div>
+          
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem", justifyContent: "center" }}>
             {portfolioData.projects
               .filter(project => activeFilter === "All" || project.category === activeFilter)
@@ -674,69 +620,55 @@ function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer>
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <a href="#home" className="logo">
-                {portfolioData.personalInfo.name.split(" ")[0]}.design
-              </a>
-              <p>Creating beautiful, user-centered digital experiences</p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="footer-nav">
-                <h4>Navigation</h4>
-                <ul>
-                  {["home", "about", "skills", "projects", "experience", "contact"].map((section) => (
-                    <li key={section}>
-                      <a href={`#${section}`}>
-                        {section.charAt(0).toUpperCase() + section.slice(1)}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="footer-services">
-                <h4>Services</h4>
-                <ul>
-                  <li>UI Design</li>
-                  <li>UX Research</li>
-                  <li>Design Systems</li>
-                  <li>Frontend Development</li>
-                  <li>Interactive Prototypes</li>
-                </ul>
-              </div>
-              
-              <div className="footer-contact">
-                <h4>Contact</h4>
-                <p>{portfolioData.contactInfo.email}</p>
-                <p>{portfolioData.contactInfo.phone}</p>
-                <p>{portfolioData.personalInfo.location}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} {portfolioData.personalInfo.name}. All rights reserved.</p>
-            <p>Designed & Developed with ❤</p>
-            <div className="social-icons">
-              {portfolioData.socialMedia.map((social) => (
-                <a 
-                  key={social.name}
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={{ margin: "0 0.5rem", color: "#EEEEEE" }}
-                >
-                  {getIcon(social.icon)}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </footer>
+      <footer className="bg-[#1e1216] text-white py-10 px-6">
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+    <div>
+      <h1 className="text-xl font-bold mb-2 text-purple-400">Lemuel.design</h1>
+      <p>Creating beautiful, user-centered digital experiences</p>
+    </div>
+    
+    <div>
+      <h2 className="font-bold mb-2">Navigation</h2>
+      <ul className="space-y-1">
+        <li><a href="#home" className="hover:text-purple-400">Home</a></li>
+        <li><a href="#about" className="hover:text-purple-400">About</a></li>
+        <li><a href="#skills" className="hover:text-purple-400">Skills</a></li>
+        <li><a href="#projects" className="hover:text-purple-400">Projects</a></li>
+        <li><a href="#experience" className="hover:text-purple-400">Experience</a></li>
+        <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 className="font-bold mb-2">Services</h2>
+      <ul className="space-y-1">
+        <li>UI Design</li>
+        <li>UX Research</li>
+        <li>Design Systems</li>
+        <li>Frontend Development</li>
+        <li>Interactive Prototypes</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 className="font-bold mb-2">Contact</h2>
+      <p>lemuelwork31@gmail.com</p>
+      <p>+91 9969179051</p>
+      <p>Mumbai, Maharashtra</p>
+      <p>Bengaluru, Karnataka</p>
+    </div>
+  </div>
+
+  <div className="mt-10 text-center text-sm text-gray-400">
+    <p>© 2025 Lemuel Fernandes. All rights reserved.</p>
+    <p className="flex justify-center items-center gap-3 mt-2">
+      Designed & Developed with ❤️
+      <a href="https://instagram.com" target="_blank" rel="noreferrer"><i className="fab fa-instagram" /></a>
+      <a href="https://linkedin.com" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" /></a>
+      <a href="https://github.com" target="_blank" rel="noreferrer"><i className="fab fa-github" /></a>
+    </p>
+  </div>
+</footer>
     </div>
   );
 }

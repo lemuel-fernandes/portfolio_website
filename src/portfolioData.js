@@ -17,7 +17,7 @@ const portfolioData = {
       email: "lemuelwork31@gmail.com",
       phone: "+91 9969179051",
       linkedin: "https://www.linkedin.com/in/lemuel-fernandes-881569275/e",
-      github: "https://github.com/yourprofile",
+      github: "https://github.com/lemuel-fernandes",
     },
     
     // Social media links
@@ -37,7 +37,7 @@ const portfolioData = {
       // Skills with proficiency levels (1-100)
       skills: [
         { name: "UI/UX Design", proficiency: 95 },
-        { name: "React", proficiency: 70 },
+        { name: "React", proficiency: 60 },
         { name: "Java", proficiency: 95 },
         { name: "JavaScript", proficiency: 85 },
         { name: "HTML/CSS", proficiency: 90 },
@@ -64,7 +64,7 @@ const portfolioData = {
         image: "/image.png",
         tags: ["React", "Frontend", "UI Design"],
         githubLink: "",
-        liveLink: "https://your-portfolio.com"
+        liveLink: "https://lemueldev.vercel.app/"
       },
       {
         id: 3,
@@ -82,8 +82,8 @@ const portfolioData = {
         tags: ["design", "canva"],
         image: "/aceclutch.jpg", // Optional preview image
         githubLink: "", // Leave empty if not needed
-        liveLink: "https://www.canva.com/design/DAGgITsrt1E/Rz9xY19-b-vRAXfW8eCXdQ/edit?utm_content=DAGgITsrt1E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // Leave empty too
-        embedLink: "https://www.canva.com/design/DAGgITsrt1E/Rz9xY19-b-vRAXfW8eCXdQ/edit?utm_content=DAGgITsrt1E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+        liveLink: "https://drive.google.com/file/d/1UmEpmwdGhKoFNZPo8G-fzUSzK5TTDc5Z/view?usp=sharing", // Leave empty too
+        embedLink: "https://drive.google.com/file/d/1UmEpmwdGhKoFNZPo8G-fzUSzK5TTDc5Z/view?usp=sharing"
       },
       {
         id: "canva2",
@@ -92,8 +92,8 @@ const portfolioData = {
         tags: ["design", "canva"],
         image: "/enigma.png", // Optional preview image
         githubLink: "", // Leave empty if not needed
-        liveLink: "https://www.canva.com/design/DAGVfnw709Y/yHRov-mn6q4Y43mewUrhog/edit?utm_content=DAGVfnw709Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // Leave empty too
-        embedLink: "https://www.canva.com/design/DAGVfnw709Y/yHRov-mn6q4Y43mewUrhog/edit?utm_content=DAGVfnw709Y&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+        liveLink: "https://drive.google.com/file/d/1ft7pVs-JiXeg7fanbg_qpYIMH7Zch8yx/view?usp=sharing", // Leave empty too
+        embedLink: "https://drive.google.com/file/d/1ft7pVs-JiXeg7fanbg_qpYIMH7Zch8yx/view?usp=sharing"
       },
       {
         id: "canva3",
@@ -102,8 +102,8 @@ const portfolioData = {
         tags: ["design", "canva"],
         image: "/magnovite.png", // Optional preview image
         githubLink: "", // Leave empty if not needed
-        liveLink: "https://www.canva.com/design/DAF8d3bWBoE/IyaxWxpeX5N_Up2iKiRJLw/edit?utm_content=DAF8d3bWBoE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", // Leave empty too
-        embedLink: "https://www.canva.com/design/DAF8d3bWBoE/IyaxWxpeX5N_Up2iKiRJLw/edit?utm_content=DAF8d3bWBoE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+        liveLink: "https://drive.google.com/file/d/18sFY-0AVBQoKBwmMNRLEzDOzCrAOuBqO/view?usp=sharing", // Leave empty too
+        embedLink: "https://drive.google.com/file/d/18sFY-0AVBQoKBwmMNRLEzDOzCrAOuBqO/view?usp=sharing"
       }
     ],
     
@@ -111,30 +111,49 @@ const portfolioData = {
     certificates: [
       {
         id: 1,
-        title: "AI for Everyone",
-        description: "Introduction to Artificial Intelligence by Andrew Ng",
-        issuer: "Coursera",
-        image: "/certificates/ai-course.jpg",
-        tags: ["AI", "Beginner"],
-        certificateLink: "https://coursera.org/verify/abc123"
+        title: "IBM Build your own Chatbot",
+        description: "Certification in IBM's Chatbot training.",
+        issuer: "IBM",
+        image: "/certificate(1).jpg",
+        tags: ["AI", "Chatbot"],
+        certificateLink: "https://drive.google.com/file/d/14WaeahwiB0zaM7P5xpqwztyyt1etk97J/view?usp=sharing" // or update if needed
       },
       {
         id: 2,
-        title: "Frontend Development Bootcamp",
-        description: "Comprehensive training in HTML, CSS, and JavaScript.",
-        issuer: "Udemy",
-        image: "/certificates/frontend.jpg",
-        tags: ["Web Dev", "Frontend"],
-        certificateLink: "https://udemy.com/certificate/xyz456"
+        title: "Introduction to Data Science",
+        description: "Introduction to foundational concepts in data science.",
+        issuer: "CISCO Networking Academy",
+        image: "/certificate(2).jpg",
+        tags: ["Data Science", "Beginner"],
+        certificateLink: "https://drive.google.com/file/d/1CFiQ8WUCQ8Um2_2hOGDj_a1_G-HPYczU/view?usp=sharing" // or update if needed
+      },
+      {
+        id: 3,
+        title: "Programming for Data Analytics (Python)",
+        description: "Covers Python basics for analyzing and visualizing data.",
+        issuer: "L&T Edutech",
+        image: "/certificate(3).jpg",
+        tags: ["Python", "Data Analytics"],
+        certificateLink: "https://drive.google.com/file/d/18U1ciXPLnxNSS7xjCsdQVwWT2O3TZq8n/view?usp=sharing" // replace with actual link
+      },
+      {
+        id: 4,
+        title: "UX Design Introduction Job Simulation",
+        description: "Covers basics of UX Design and product development.",
+        issuer: "Lloyd's Banking Group- FORAGE",
+        image: "/certificate(4).png",
+        tags: ["UX Design", "Product"],
+        certificateLink: "https://drive.google.com/file/d/1CO7IoS_Y-gyEPeQPyLmlw-FUm5F9yqat/view?usp=sharing" // replace with actual link
       }
     ],
+
     // Education
     education: [
       {
         institution: "Christ University",
         degree: "B.Tech in Computer Science",
         period: "2023 - 2027",
-        description: "Focused on AI & ML, web development, and cybersecurity."
+        description: "8.2 CGPA:Focused on AI & ML, web development, and cybersecurity."
       }
     ],
     
