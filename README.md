@@ -8,7 +8,6 @@ It showcases my projects, technical skills, and background as a B.Tech student p
 ## 🌐 Live Preview
 
 👉 [View Live Website](https://lemueldev.vercel.app/)  
-*Replace the link with your Vercel deployment URL once hosted*
 
 ---
 
