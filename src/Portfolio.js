@@ -1,4 +1,3 @@
-import Math from "react";
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion, useReducedMotion, useMotionValue, useSpring, useMotionTemplate, useScroll, useTransform } from "framer-motion";
