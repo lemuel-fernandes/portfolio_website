@@ -69,7 +69,7 @@ const Projects = () => {
         <div className="projects-grid-page">
           {filteredProjects.map((project) => (
             <article key={project.id} className="card">
-              <img src={project.image || "/placeholder.svg"} alt={project.title} />
+              <img src={project.image || "/placeholder.svg"} alt={project.title} loading="lazy" />
               <div className="card-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>

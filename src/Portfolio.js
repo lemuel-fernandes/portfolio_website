@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion, useMotionValue, useSpring, useMotionTemplate, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll } from "framer-motion";
 import portfolioData from "./portfolioData";
 import * as Icons from "lucide-react";
 
@@ -14,34 +14,8 @@ const viewportReveal = {
 function Portfolio() {
   const reduceMotion = useReducedMotion();
 
-  // Pointer position for futuristic grid mask
-  const pointerX = useMotionValue(typeof window !== "undefined" ? window.innerWidth / 2 : 0);
-  const pointerY = useMotionValue(typeof window !== "undefined" ? window.innerHeight / 2 : 0);
-  
-  // Smoothing the mouse movement for fluent transition with a highly relaxed spring
-  const mouseX = useSpring(pointerX, { stiffness: 40, damping: 25, mass: 0.5 });
-  const mouseY = useSpring(pointerY, { stiffness: 40, damping: 25, mass: 0.5 });
-  
-  // Generate dynamic mask string that updates when mouseXY changes
-  const bgMaskImage = useMotionTemplate`radial-gradient(circle 750px at ${mouseX}px ${mouseY}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)`;
-
-  // Secondary delayed spring for cursor aura ring
-  const auraX = useSpring(pointerX, { stiffness: 150, damping: 25, mass: 0.5 });
-  const auraY = useSpring(pointerY, { stiffness: 150, damping: 25, mass: 0.5 });
-  const ringX = useTransform(auraX, x => x - 20); // 40px width centered
-  const ringY = useTransform(auraY, y => y - 20); // 40px height centered
-
   // Scroll Progress Bar
   const { scrollYProgress } = useScroll();
-
-  useEffect(() => {
-    const handlePointerMove = (e) => {
-      pointerX.set(e.clientX);
-      pointerY.set(e.clientY);
-    };
-    window.addEventListener("pointermove", handlePointerMove);
-    return () => window.removeEventListener("pointermove", handlePointerMove);
-  }, [pointerX, pointerY]);
 
   const fadeUp = useMemo(
     () =>
@@ -226,26 +200,14 @@ function Portfolio() {
   return (
     <div className="portfolio-page">
       <div className="cosmic-bg" aria-hidden>
+        <div className="cosmic-bg__grid" />
         <div className="cosmic-bg__bloom" />
         <div className="cosmic-bg__bloom cosmic-bg__bloom--2" />
         <div className="cosmic-bg__bloom cosmic-bg__bloom--3" />
-        <motion.div 
-          className="cosmic-bg__grid" 
-          style={{ WebkitMaskImage: bgMaskImage, maskImage: bgMaskImage }}
-        />
       </div>
 
       {/* Global Scroll Progress Bar */}
       <motion.div className="scroll-tracker" style={{ scaleX: scrollYProgress }} />
-
-      {/* Custom Mouse Aura */}
-      {!reduceMotion && (
-        <motion.div 
-          className="cursor-aura" 
-          style={{ x: ringX, y: ringY }} 
-          aria-hidden="true" 
-        />
-      )}
 
       <header
         className={`site-header${headerScrolled ? " site-header--scrolled" : ""}${
@@ -278,7 +240,7 @@ function Portfolio() {
               </a>
             ))}
             <a
-              href="https://drive.google.com/file/d/1ithew98tJuVwccAfwOeRErFvrRW-CB5m/view?usp=sharing"
+              href={portfolioData.personalInfo.resumeLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn"
@@ -447,7 +409,7 @@ function Portfolio() {
                 whileHover={cardHover}
                 whileTap={cardTap}
               >
-                <img src={project.image || "/placeholder.svg"} alt={project.title} />
+                <img src={project.image || "/placeholder.svg"} alt={project.title} loading="lazy" />
                 <div className="card-content">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
@@ -506,7 +468,7 @@ function Portfolio() {
                 whileHover={cardHover}
                 whileTap={cardTap}
               >
-                <img src={certificate.image || "/placeholder.svg"} alt={certificate.title} />
+                <img src={certificate.image || "/placeholder.svg"} alt={certificate.title} loading="lazy" />
                 <div className="card-content">
                   <h3>{certificate.title}</h3>
                   <p style={{ margin: "0.5rem 0" }}>{certificate.description}</p>

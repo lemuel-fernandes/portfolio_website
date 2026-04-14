@@ -4,11 +4,11 @@ const portfolioData = {
     // Basic info
     personalInfo: {
       name: "Lemuel Fernandes",
-      title: "UI/UX Designer | Developer",
-      headline: "Creating digital experiences",
-      description: "I design intuitive interfaces and create meaningful experiences that connect people with technology, products, and ideas.",
+      title: "Software & AI/ML Developer",
+      headline: "Creating intelligent and resilient digital experiences",
+      description: "I build robust full-stack applications and architect machine learning pipelines that solve real-world problems efficiently.",
       location: "Mumbai, Maharashtra | Bengaluru, Karnataka",
-      resumeLink: "https://drive.google.com/file/d/1ithew98tJuVwccAfwOeRErFvrRW-CB5m/view?usp=sharing",
+      resumeLink: "https://drive.google.com/file/d/1q0xSv6WRUT57I5r8WHhEmFv5CnRlNDH2/view?usp=sharing",
       profileImage: "./lemportrait.jpg", 
     },
     
@@ -30,19 +30,19 @@ const portfolioData = {
     // About me section
     about: {
       paragraphs: [
-        "I'm Lemuel Fernandes, a B.Tech student at Christ University, passionate about AI, ethical hacking, game development, UI/UX design, and digital marketing. I love crafting innovative digital experiences that merge creativity with functionality, ensuring technology serves real-world needs.",
-        "With an entrepreneurial mindset, I constantly seek opportunities to innovate, solve problems, and drive impact. Whether it's designing intuitive interfaces, securing systems, or developing engaging digital products, I approach every challenge with strategic thinking and a user-first perspective.",
-        "Beyond tech, I leverage digital marketing and brand strategy to bridge the gap between technology and business growth. By combining SEO, content marketing, and social media strategies, I ensure digital solutions aren’t just well-built but also effectively reach and engage the right audience. ",
+        "I'm Lemuel Fernandes, a B.Tech student at Christ University, specializing in full-stack web development and machine learning pipelines. I love architecting intelligent systems that merge resilient backend engineering with insightful data models, ensuring technology solves tangible real-world problems.",
+        "With an engineering mindset, I constantly seek opportunities to optimize performance, train efficient ML classifiers, and drive automated impact. Whether it's building role-based control systems, deploying robust cloud APIs, or constructing ensemble models for malware detection, I approach every challenge with strategic execution and scalable design.",
+        "Beyond code, I focus heavily on seamless developer handoffs and comprehensive team mentoring. By standardizing backend architectures and educating juniors on core programming fundamentals, I ensure software isn't just well-built but maintainable and collaboratively driven. ",
       ],
       // Skills with proficiency levels (1-100)
       skills: [
-        { name: "UI/UX Design", proficiency: 95 },
-        { name: "React", proficiency: 60 },
-        { name: "Java", proficiency: 95 },
-        { name: "JavaScript", proficiency: 85 },
+        { name: "Python", proficiency: 95 },
+        { name: "JavaScript / TypeScript", proficiency: 90 },
+        { name: "React & Next.js", proficiency: 85 },
+        { name: "FastAPI", proficiency: 80 },
+        { name: "TensorFlow & Scikit-learn", proficiency: 85 },
+        { name: "Docker & AWS", proficiency: 75 },
         { name: "HTML/CSS", proficiency: 90 },
-        { name: "Python", proficiency: 70 },
-        { name: "Ethical Hacking", proficiency: 85 },
       ]
     },
     
@@ -50,60 +50,30 @@ const portfolioData = {
     projects: [
       {
         id: 1,
-        title: "Finance App Redesign",
-        description: "A complete redesign focusing on simplicity and data visualization.",
-        image: "/candlestick.png", // Add project images to the public folder
-        tags: ["UI/UX", "Mobile App", "Finance"],
-        githubLink: "",
-        liveLink: "https://your-finance-app.com"
+        title: "ML-Powered Malware Detection",
+        description: "Ensemble of ML classifiers (Random Forest, SVM, TensorFlow DNN) achieving 92% accuracy in malware detection.",
+        image: "/placeholder.svg", // Replaced heavy image for placeholder compression
+        tags: ["Machine Learning", "Python", "TensorFlow"],
+        githubLink: "#",
+        liveLink: "#"
       },
       {
         id: 2,
-        title: "Portfolio Website",
-        description: "A responsive personal website showcasing my design and development skills.",
-        image: "/image.png",
-        tags: ["React", "Frontend", "UI Design"],
-        githubLink: "",
-        liveLink: "https://lemueldev.vercel.app/"
+        title: "Laboratory Information Management (LIMS)",
+        description: "Full-stack Next.js and MongoDB application with robust internal role-based access control.",
+        image: "/placeholder.svg",
+        tags: ["Next.js", "MongoDB", "Full-Stack"],
+        githubLink: "#",
+        liveLink: "#"
       },
       {
         id: 3,
-        title: "AI Chatbot",
-        description: "An intelligent chatbot built with natural language processing capabilities.",
-        image: "/chatbot.jpg",
-        tags: ["AI", "Python", "NLP"],
-        githubLink: "",
-        liveLink: "https://your-chatbot.com"
-      },
-      {
-        id: "canva1",
-        title: "Poster Design",
-        description: "Basic Poster Design Using Elements.",
-        tags: ["design", "canva"],
-        image: "/aceclutch.jpg", // Optional preview image
-        githubLink: "", // Leave empty if not needed
-        liveLink: "https://drive.google.com/file/d/1UmEpmwdGhKoFNZPo8G-fzUSzK5TTDc5Z/view?usp=sharing", // Leave empty too
-        embedLink: "https://drive.google.com/file/d/1UmEpmwdGhKoFNZPo8G-fzUSzK5TTDc5Z/view?usp=sharing"
-      },
-      {
-        id: "canva2",
-        title: "Event Poster Design",
-        description: "Poster displaying use of Gradients and Colour Palette.",
-        tags: ["design", "canva"],
-        image: "/enigma.png", // Optional preview image
-        githubLink: "", // Leave empty if not needed
-        liveLink: "https://drive.google.com/file/d/1ft7pVs-JiXeg7fanbg_qpYIMH7Zch8yx/view?usp=sharing", // Leave empty too
-        embedLink: "https://drive.google.com/file/d/1ft7pVs-JiXeg7fanbg_qpYIMH7Zch8yx/view?usp=sharing"
-      },
-      {
-        id: "canva3",
-        title: "Event Brochure Design",
-        description: "Brochure design as per colour palette.",
-        tags: ["design", "canva"],
-        image: "/magnovite.png", // Optional preview image
-        githubLink: "", // Leave empty if not needed
-        liveLink: "https://drive.google.com/file/d/18sFY-0AVBQoKBwmMNRLEzDOzCrAOuBqO/view?usp=sharing", // Leave empty too
-        embedLink: "https://drive.google.com/file/d/18sFY-0AVBQoKBwmMNRLEzDOzCrAOuBqO/view?usp=sharing"
+        title: "AI-Powered Event Management",
+        description: "Built a FastAPI backend with automated post-event workflows and PDF certificate generation.",
+        image: "/placeholder.svg",
+        tags: ["FastAPI", "Python", "Automation"],
+        githubLink: "#",
+        liveLink: "#"
       }
     ],
     
@@ -112,38 +82,38 @@ const portfolioData = {
       {
         id: 1,
         title: "IBM Build your own Chatbot",
-        description: "Certification in IBM's Chatbot training.",
+        description: "Certification in IBM's Chatbot training. (May 2024)",
         issuer: "IBM",
         image: "/certificate(1).jpg",
         tags: ["AI", "Chatbot"],
-        certificateLink: "https://drive.google.com/file/d/14WaeahwiB0zaM7P5xpqwztyyt1etk97J/view?usp=sharing" // or update if needed
+        certificateLink: "https://drive.google.com/file/d/14WaeahwiB0zaM7P5xpqwztyyt1etk97J/view?usp=sharing"
       },
       {
         id: 2,
         title: "Introduction to Data Science",
-        description: "Introduction to foundational concepts in data science.",
+        description: "Foundational concepts in data science. (Jun 2024)",
         issuer: "CISCO Networking Academy",
         image: "/certificate(2).jpg",
         tags: ["Data Science", "Beginner"],
-        certificateLink: "https://drive.google.com/file/d/1CFiQ8WUCQ8Um2_2hOGDj_a1_G-HPYczU/view?usp=sharing" // or update if needed
+        certificateLink: "https://drive.google.com/file/d/1CFiQ8WUCQ8Um2_2hOGDj_a1_G-HPYczU/view?usp=sharing"
       },
       {
         id: 3,
         title: "Programming for Data Analytics (Python)",
-        description: "Covers Python basics for analyzing and visualizing data.",
+        description: "Python basics for analyzing data. (May 2024)",
         issuer: "L&T Edutech",
         image: "/certificate(3).jpg",
         tags: ["Python", "Data Analytics"],
-        certificateLink: "https://drive.google.com/file/d/18U1ciXPLnxNSS7xjCsdQVwWT2O3TZq8n/view?usp=sharing" // replace with actual link
+        certificateLink: "https://drive.google.com/file/d/18U1ciXPLnxNSS7xjCsdQVwWT2O3TZq8n/view?usp=sharing"
       },
       {
         id: 4,
-        title: "UX Design Introduction Job Simulation",
-        description: "Covers basics of UX Design and product development.",
-        issuer: "Lloyd's Banking Group- FORAGE",
+        title: "UX Design Introduction",
+        description: "Basics of UX Design and product development. (Jun 2024)",
+        issuer: "Lloyd's Banking Group",
         image: "/certificate(4).png",
         tags: ["UX Design", "Product"],
-        certificateLink: "https://drive.google.com/file/d/1CO7IoS_Y-gyEPeQPyLmlw-FUm5F9yqat/view?usp=sharing" // replace with actual link
+        certificateLink: "https://drive.google.com/file/d/1CO7IoS_Y-gyEPeQPyLmlw-FUm5F9yqat/view?usp=sharing"
       }
     ],
 
@@ -151,25 +121,31 @@ const portfolioData = {
     education: [
       {
         institution: "Christ University",
-        degree: "B.Tech in Computer Science",
+        degree: "B.Tech in Computer Science (Honours in Cyber Security)",
         period: "2023 - 2027",
-        description: "8.2 CGPA:Focused on AI & ML, web development, and cybersecurity."
+        description: "GPA 3.4/4.0: Focused on AI & ML, web development, and cybersecurity."
       }
     ],
     
     // Experience
     experience: [
       {
-        company: "Digital Marketing Startup",
-        position: "Teachnical Team",
-        period: "Sept - Nov 2024",
-        description: "Helped the Company make websites for clients as per the requirement considering themes etc using Wordpress."
+        company: "Etailed Digital Services",
+        position: "UI/UX Intern",
+        period: "Jun 2025 - Jul 2025",
+        description: "Reduced friction in key user journeys and partnered directly with engineers for seamless design handoffs."
       },
       {
-        company: "Freelance",
-        position: "Web Developer",
+        company: "IEEE GRSS",
+        position: "Jr. WebMaster",
         period: "2024 - Present",
-        description: "Developed websites for small businesses and startups."
+        description: "Managed operations for InC4 and engineered an automated conference management platform."
+      },
+      {
+        company: "Christ University",
+        position: "Peer Mentor",
+        period: "2024 - Present",
+        description: "Mentoring juniors comprehensively in Data Structures, DBMS, and core Programming Fundamentals."
       }
     ]
   };

@@ -107,12 +107,9 @@ body {
     ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
-  /*******************************************************
-   * Mask image is now dynamically applied via inline style 
-   * in Portfolio.js using Framer Motion template
-   *******************************************************/
   opacity: 0.65;
   animation: grid-shift 40s linear infinite;
+  transform: translateZ(0); /* Force GPU compositing */
 }
 
 @keyframes bloom-drift {
@@ -1216,18 +1213,6 @@ button[type="submit"]:disabled {
   box-shadow: 0 0 16px var(--accent);
 }
 
-.cursor-aura {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(216, 64, 64, 0.5);
-  box-shadow: 0 0 24px rgba(216, 64, 64, 0.25), inset 0 0 16px rgba(216, 64, 64, 0.15);
-  z-index: 9999;
-}
 
 .logo {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1240,9 +1225,6 @@ button[type="submit"]:disabled {
 
 /* Mobile */
 @media only screen and (max-width: 960px) {
-  .cursor-aura {
-    display: none;
-  }
   .hero {
     grid-template-columns: 1fr;
     padding-top: 48px;
